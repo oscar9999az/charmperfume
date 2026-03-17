@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CHARM PERFUME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/images/logo.png" alt="CHARM PERFUME Logo" class="brand-logo" />
+        <div>
+          <h1>CHARM PERFUME</h1>
+          <p>Boutique de parfums</p>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a class="btn btn-outline" href="#catalogue">Catalogue</a>
+        <a class="btn btn-gold" href="https://wa.me/212649657517?text=Bonjour%20CHARM%20PERFUME%2C%20je%20veux%20commander." target="_blank" rel="noopener">WhatsApp</a>
+        <button id="cartButton" class="cart-button" aria-label="Panier">
+          <span>Panier</span>
+          <strong id="cartCount">0</strong>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Parfums hommes & femmes</span>
+        <h2>Choisissez votre parfum préféré et commandez en quelques clics.</h2>
+        <p>
+          Tailles disponibles :
+          <strong>30ml = 55 DH</strong>,
+          <strong>60ml = 75 DH</strong>,
+          <strong>100ml = 120 DH</strong>.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#catalogue">Voir le catalogue</a>
+          <a class="btn btn-outline" href="https://wa.me/212649657517?text=Bonjour%20CHARM%20PERFUME%2C%20je%20veux%20plus%20d%27informations." target="_blank" rel="noopener">Demande directe WhatsApp</a>
+        </div>
+        <div class="price-card">
+          <div><span>30ml</span><strong>55 DH</strong></div>
+          <div><span>60ml</span><strong>75 DH</strong></div>
+          <div><span>100ml</span><strong>120 DH</strong></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="assets/images/logo.png" alt="Flacon CHARM PERFUME" />
+      </div>
+    </div>
+  </section>
+
+  <section class="controls">
+    <div class="container controls-wrap">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Rechercher un parfum..." />
+      </div>
+      <div class="filter-box">
+        <button class="filter active" data-filter="all">Tout</button>
+        <button class="filter" data-filter="Homme">Homme</button>
+        <button class="filter" data-filter="Femme">Femme</button>
+      </div>
+    </div>
+  </section>
+
+  <main id="catalogue" class="catalogue-section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Catalogue complet</span>
+          <h3>42 parfums homme & 32 parfums femme</h3>
+        </div>
+        <p id="resultsCount">74 produits</p>
+      </div>
+      <div id="productsGrid" class="products-grid"></div>
+    </div>
+  </main>
+
+  <aside id="cartDrawer" class="cart-drawer">
+    <div class="cart-header">
+      <h4>Votre panier</h4>
+      <button id="closeCart" class="icon-button" aria-label="Fermer">✕</button>
+    </div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">0 DH</strong>
+      </div>
+      <button id="sendOrder" class="btn btn-gold btn-block">Commander sur WhatsApp</button>
+      <button id="clearCart" class="btn btn-outline btn-block">Vider le panier</button>
+    </div>
+  </aside>
+  <div id="overlay" class="overlay"></div>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <div>
+        <h5>CHARM PERFUME</h5>
+        <p>Commande directe sur WhatsApp : <a href="https://wa.me/212649657517" target="_blank" rel="noopener">0649657517</a></p>
+      </div>
+      <div>
+        <p>Prix fixes : 30ml 55 DH · 60ml 75 DH · 100ml 120 DH</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const products = [{"name": "Bleu de Chanel", "image": "assets/images/men/men-01.webp", "category": "Homme"}, {"name": "Lacoste Noir", "image": "assets/images/men/men-02.webp", "category": "Homme"}, {"name": "Versace Eros", "image": "assets/images/men/men-03.webp", "category": "Homme"}, {"name": "Stronger With You Intensely", "image": "assets/images/men/men-04.webp", "category": "Homme"}, {"name": "Aqua di Gio", "image": "assets/images/men/men-05.webp", "category": "Homme"}, {"name": "Silver Scent", "image": "assets/images/men/men-06.webp", "category": "Homme"}, {"name": "One Million", "image": "assets/images/men/men-07.webp", "category": "Homme"}, {"name": "Aventus Creed", "image": "assets/images/men/men-08.webp", "category": "Homme"}, {"name": "Jean Paul Gaultier Le Beau Paradise", "image": "assets/images/men/men-09.webp", "category": "Homme"}, {"name": "Jean Paul Gaultier Le Beau", "image": "assets/images/men/men-10.webp", "category": "Homme"}, {"name": "Jean Paul Gaultier Ultra Male", "image": "assets/images/men/men-11.webp", "category": "Homme"}, {"name": "Terre d'Hermès", "image": "assets/images/men/men-12.webp", "category": "Homme"}, {"name": "Spicebomb", "image": "assets/images/men/men-13.webp", "category": "Homme"}, {"name": "Tom Ford Tobacco Vanille", "image": "assets/images/men/men-14.webp", "category": "Homme"}, {"name": "Club de la Nuit", "image": "assets/images/men/men-15.webp", "category": "Homme"}, {"name": "Sauvage", "image": "assets/images/men/men-16.webp", "category": "Homme"}, {"name": "Le Male Elixir", "image": "assets/images/men/men-17.webp", "category": "Homme"}, {"name": "La Nuit de l'Homme", "image": "assets/images/men/men-18.webp", "category": "Homme"}, {"name": "Y YSL", "image": "assets/images/men/men-19.webp", "category": "Homme"}, {"name": "Black XS", "image": "assets/images/men/men-20.webp", "category": "Homme"}, {"name": "Azzaro Wanted", "image": "assets/images/men/men-21.webp", "category": "Homme"}, {"name": "Scandal Pour Homme Absolu", "image": "assets/images/men/men-22.webp", "category": "Homme"}, {"name": "Invictus", "image": "assets/images/men/men-23.webp", "category": "Homme"}, {"name": "Louis Vuitton Imagination", "image": "assets/images/men/men-24.webp", "category": "Homme"}, {"name": "Spicebomb Extreme", "image": "assets/images/men/men-25.webp", "category": "Homme"}, {"name": "Tom Ford Ombre Leather", "image": "assets/images/men/men-26.webp", "category": "Homme"}, {"name": "Sauvage Elixir", "image": "assets/images/men/men-27.webp", "category": "Homme"}, {"name": "Le Male Le Parfum", "image": "assets/images/men/men-28.webp", "category": "Homme"}, {"name": "Stronger With You Absolutely", "image": "assets/images/men/men-29.webp", "category": "Homme"}, {"name": "Afnan 9PM Rebel", "image": "assets/images/men/men-30.webp", "category": "Homme"}, {"name": "Bad Boy", "image": "assets/images/men/men-31.webp", "category": "Homme"}, {"name": "Dior Homme Intense", "image": "assets/images/men/men-32.webp", "category": "Homme"}, {"name": "Azzaro The Most Wanted", "image": "assets/images/men/men-33.webp", "category": "Homme"}, {"name": "Fahrenheit", "image": "assets/images/men/men-34.webp", "category": "Homme"}, {"name": "Light Blue Pour Homme", "image": "assets/images/men/men-35.webp", "category": "Homme"}, {"name": "Hugo Boss", "image": "assets/images/men/men-36.webp", "category": "Homme"}, {"name": "Desire Blue", "image": "assets/images/men/men-37.webp", "category": "Homme"}, {"name": "Oud Ispahan", "image": "assets/images/men/men-38.webp", "category": "Homme"}, {"name": "Dolce & Gabbana The One", "image": "assets/images/men/men-39.webp", "category": "Homme"}, {"name": "Malak Parfum", "image": "assets/images/men/men-40.webp", "category": "Homme"}, {"name": "Signature Parfum", "image": "assets/images/men/men-41.webp", "category": "Homme"}, {"name": "Santal Royal", "image": "assets/images/men/men-42.webp", "category": "Homme"}, {"name": "Scandal Femme", "image": "assets/images/women/women-01.webp", "category": "Femme"}, {"name": "Narciso Poudrée", "image": "assets/images/women/women-02.webp", "category": "Femme"}, {"name": "Kayali 81 Marshmallow", "image": "assets/images/women/women-03.webp", "category": "Femme"}, {"name": "Kayali 01", "image": "assets/images/women/women-04.webp", "category": "Femme"}, {"name": "Kayali Vanille 28", "image": "assets/images/women/women-05.webp", "category": "Femme"}, {"name": "Evidence", "image": "assets/images/women/women-06.webp", "category": "Femme"}, {"name": "L'Impératrice", "image": "assets/images/women/women-07.webp", "category": "Femme"}, {"name": "Amber Elixir", "image": "assets/images/women/women-08.webp", "category": "Femme"}, {"name": "J'adore", "image": "assets/images/women/women-09.webp", "category": "Femme"}, {"name": "L'Interdit Rouge", "image": "assets/images/women/women-10.webp", "category": "Femme"}, {"name": "La Vie Est Belle", "image": "assets/images/women/women-11.webp", "category": "Femme"}, {"name": "Olympia", "image": "assets/images/women/women-12.webp", "category": "Femme"}, {"name": "Burberry Her", "image": "assets/images/women/women-13.webp", "category": "Femme"}, {"name": "Coconut Passion", "image": "assets/images/women/women-14.webp", "category": "Femme"}, {"name": "Hypnotic Poison", "image": "assets/images/women/women-15.webp", "category": "Femme"}, {"name": "Libre Intense", "image": "assets/images/women/women-16.webp", "category": "Femme"}, {"name": "Good Girl", "image": "assets/images/women/women-17.webp", "category": "Femme"}, {"name": "Giordani Gold", "image": "assets/images/women/women-18.webp", "category": "Femme"}, {"name": "La Nuit Trésor", "image": "assets/images/women/women-19.webp", "category": "Femme"}, {"name": "Coco Mademoiselle", "image": "assets/images/women/women-20.webp", "category": "Femme"}, {"name": "Because It's You", "image": "assets/images/women/women-21.webp", "category": "Femme"}, {"name": "Chance Chanel", "image": "assets/images/women/women-22.webp", "category": "Femme"}, {"name": "Black Opium", "image": "assets/images/women/women-23.webp", "category": "Femme"}, {"name": "Delina", "image": "assets/images/women/women-24.webp", "category": "Femme"}, {"name": "Prada Paradoxe", "image": "assets/images/women/women-25.webp", "category": "Femme"}, {"name": "Gissah Imperial Valley", "image": "assets/images/women/women-26.webp", "category": "Femme"}, {"name": "Baccarat Rouge", "image": "assets/images/women/women-27.webp", "category": "Femme"}, {"name": "JPG La Belle", "image": "assets/images/women/women-28.webp", "category": "Femme"}, {"name": "Gucci Flora", "image": "assets/images/women/women-29.webp", "category": "Femme"}, {"name": "Miss Dior Chérie", "image": "assets/images/women/women-30.webp", "category": "Femme"}, {"name": "Yves Saint Laurent Cinema", "image": "assets/images/women/women-31.webp", "category": "Femme"}, {"name": "My Way", "image": "assets/images/women/women-32.webp", "category": "Femme"}];
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
